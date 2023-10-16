@@ -6,16 +6,19 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 const createBlog = () => {
+
+  //täyttökenttien statet
   const [open, setOpen] = useState(false);
   const [desc, setDesc] = useState("");
   const [title, setTitle] = useState("");
   const router = useRouter()
 
+  //formin submittaus / blogin julkaisu funktio
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/api/blog", {
+      const res = await fetch(`http://localhost:3000/api/blog`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -24,7 +27,7 @@ const createBlog = () => {
       });
       const blog = await res.json();
 
-      router.push(`/blog/${blog}`)
+      router.push(`/blog/${blog._id}`)
     } catch (error) {}
   };
 
@@ -66,7 +69,7 @@ const createBlog = () => {
           className="w-full"
           theme="bubble"
           value={desc}
-          onChange={() => setDesc(desc)}
+          onChange={(value) => setDesc(value)}
           placeholder="Write a blog..."
         />
         <button

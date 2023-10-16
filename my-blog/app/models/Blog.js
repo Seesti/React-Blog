@@ -11,13 +11,6 @@ const BlogSchema = new mongoose.Schema({
         required: true,
         min: 6
     },
-    imageUrl: {
-        type: String,
-        required: true,
-    },
-    Likes: {
-        type: mongoose.Schema.Types.ObjectId,
-    }
 })
 
 export default mongoose?.models?.Blog || mongoose.model("Blog", BlogSchema)

@@ -10,7 +10,7 @@ interface post {
 }
 
 
-const BlogPost = async () => {
+const BlogPost = async ({blog: {title, desc, _id}}: any) => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts: post[] = await res.json();
 
