@@ -18,7 +18,7 @@ export default async function Home() {
     <main className="h-110">
       <Header></Header>
       <div className="flex flex-col">
-          <Link href="/createBlog">
+          <Link href="/createBlog" className="w-min">
             <button className="text-3xl font-bold m-3 p-1">+</button>
           </Link>
         {blogs?.length > 0 ? blogs.map((blog: any) => (

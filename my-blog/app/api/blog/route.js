@@ -13,7 +13,7 @@ export async function GET(req) {
     }
 }
 
-// yhdistää mongoon ja lisää uuden Blog objectin, palauttaa JSON
+// yhdistää mongoon ja lisää uuden Blog objectin
 
 export async function POST(req) {
     await db.connect()

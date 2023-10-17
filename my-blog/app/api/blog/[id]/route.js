@@ -16,23 +16,6 @@ export async function GET(req, ctx) {
   }
 }
 
-// //Blogin päivitys funktio mukaan
-
-// export async function PUT(req, ctx) {
-//   await db.connect();
-
-//   const id = ctx.params.id;
-
-//   try {
-//     const body = await req.json()
-//     const blog = await Blog.findById(id);
-//     const updatedBlog = await Blog.findByIdAndUpdate(id, {$set: {...body}}, {new: true})
-//     return new Response(JSON.stringify(updatedBlog), { status: 200 });
-//   } catch (error) {
-//     return new Response(JSON.stringify(null), { status: 500 });
-//   }
-// }
-
 //blogin poistamis funktio
 
 export async function DELETE(req, ctx) {
